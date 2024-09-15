@@ -16,17 +16,18 @@ build:
 
 requirements:
   host:
-    - python >=3.10
     - hatchling >=1.8.0
     - hatch-vcs
     - pip
-  run:
     - python >=3.10
-    - numpy
-    - pytorch
+  run:
     - einops
-    - timm ==0.6.13
     - huggingface_hub
+    - numpy
+    - python >=3.10
+    - pytorch
+    - scipy
+    - timm ==0.6.13
   run_constrained:
     - aurora ==999  # avoid clobbering with https://github.com/simpeg/aurora
 
