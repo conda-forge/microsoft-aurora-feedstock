@@ -1,5 +1,5 @@
 {% set name = "microsoft-aurora" %}
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/microsoft_aurora-{{ version }}.tar.gz
-  sha256: 45ad47f20088cc0b47f4733ef27081c8defea5f5870731767447fb3b801d34ea
+  sha256: dd031ea09ad02712e89cbdedd7e4152c95d5bc79fa0554f791bdd7c5cbc57038
 
 build:
   noarch: python
@@ -16,17 +16,18 @@ build:
 
 requirements:
   host:
-    - python >=3.10
     - hatchling >=1.8.0
     - hatch-vcs
     - pip
-  run:
     - python >=3.10
-    - numpy
-    - pytorch
+  run:
     - einops
-    - timm ==0.6.13
     - huggingface_hub
+    - numpy
+    - python >=3.10
+    - pytorch
+    - scipy
+    - timm ==0.6.13
   run_constrained:
     - aurora ==999  # avoid clobbering with https://github.com/simpeg/aurora
 
