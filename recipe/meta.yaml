@@ -1,13 +1,13 @@
 {% set name = "microsoft-aurora" %}
-{% set version = "1.4.0" %}
+{% set version = "1.4.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/microsoft_aurora-{{ version }}.tar.gz
-  sha256: 157a57105a1322964ce04dee4ca4a49fe8f01328da5af7804d76202a3e231dea
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/microsoft_aurora-{{ version }}.tar.gz
+  sha256: cb6f16ee7f20b5b4b9c5c1835f722d875e9fb9c8e24ff83cd25a8e09fb2ccd67
 
 build:
   noarch: python
