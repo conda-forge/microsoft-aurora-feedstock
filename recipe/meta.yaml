@@ -22,13 +22,17 @@ requirements:
     - pip
     - python {{ python_min }}
   run:
+    - azure-storage-blob
     - einops
     - huggingface_hub
+    - netcdf4
     - numpy
+    - pydantic
     - python >={{ python_min }}
     - pytorch
     - scipy
     - timm ==0.6.13
+    - xarray
   run_constrained:
     - aurora ==999  # avoid clobbering with https://github.com/simpeg/aurora
 
