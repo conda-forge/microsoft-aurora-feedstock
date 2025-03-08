@@ -1,6 +1,6 @@
-{% set python_min = '3.10' %}
+{% set python_min = "3.10" %}
 {% set name = "microsoft-aurora" %}
-{% set version = "1.4.1" %}
+{% set version = "1.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/microsoft_aurora-{{ version }}.tar.gz
-  sha256: cb6f16ee7f20b5b4b9c5c1835f722d875e9fb9c8e24ff83cd25a8e09fb2ccd67
+  sha256: d3bf371d43f6e396d614394811922966e9a0aa689f5ed4ba1130bef8aa8fd9ce
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -22,13 +22,17 @@ requirements:
     - pip
     - python {{ python_min }}
   run:
+    - azure-storage-blob
     - einops
     - huggingface_hub
+    - netcdf4
     - numpy
+    - pydantic
     - python >={{ python_min }}
     - pytorch
     - scipy
     - timm ==0.6.13
+    - xarray
   run_constrained:
     - aurora ==999  # avoid clobbering with https://github.com/simpeg/aurora
 
