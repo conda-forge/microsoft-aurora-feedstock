@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "microsoft-aurora" %}
-{% set version = "1.5.2" %}
+{% set version = "1.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/microsoft_aurora-{{ version }}.tar.gz
-  sha256: a0c7a81851f1c2ade102ebbf3e6fa4a9cd54c8dcee4ae0649cd32885a8b539eb
+  sha256: c4e476b1c9204e7d8e3de23178d7fccf8ab9f25dad6079b60e5c92d740feadcc
 
 build:
   noarch: python
@@ -31,7 +31,7 @@ requirements:
     - python >={{ python_min }}
     - pytorch
     - scipy
-    - timm ==0.6.13
+    - timm
     - xarray
   run_constrained:
     - aurora ==999  # avoid clobbering with https://github.com/simpeg/aurora
