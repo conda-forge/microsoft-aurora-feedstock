@@ -31,7 +31,7 @@ requirements:
     - python >={{ python_min }}
     - pytorch
     - scipy
-    - timm ==0.6.13
+    - timm
     - xarray
   run_constrained:
     - aurora ==999  # avoid clobbering with https://github.com/simpeg/aurora
